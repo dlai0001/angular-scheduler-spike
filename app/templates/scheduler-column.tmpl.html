@@ -1,0 +1,9 @@
+this is the schedulerColumn directive Place holder
+<div class="scheduler-column">	
+	<ul>
+		<li ng-repeat="availableTime in availability"
+			ng-click="_clickHandler(availableTime)">
+		{{_formatTime(availableTime.time)}}
+
+	</ul>
+</div>

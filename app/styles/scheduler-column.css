@@ -1,0 +1,14 @@
+/* styles for column and sub components of a column */
+
+div.scheduler-column li {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	list-style-type: none;
+	border-radius: 0.25em;
+	background-color: #0000FF;
+	color: #FFFFFF;
+	height: 3em;
+	width: 100%;
+	text-align: center;
+	box-shadow: 0.3em 0.3em 0.3em #888888;
+}  
