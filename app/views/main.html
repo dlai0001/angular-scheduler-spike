@@ -3,7 +3,16 @@ Times in data
   <li ng-repeat="availableTime in testData.availableTimes">{{availableTime}}</li>
 </ul>
 
-<h1> Test </h1>
 
-<scheduler-column availability="testData.availableTimes">
-</scheduler-column>
+<h2> Scheduler Column </h2>
+
+  <scheduler-column availability="testData.availableTimes" format="h:mm A">
+  </scheduler-column>
+
+
+<hr/>
+
+<h2> Scheduler Group </h2>
+
+<scheduler-group data="testData2" range="7" offset="0"></scheduler-group>
+

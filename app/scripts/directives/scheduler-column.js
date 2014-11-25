@@ -17,19 +17,21 @@ angular.module('angularSchedulerSpikeApp')
       templateUrl: 'templates/scheduler-column.tmpl.html',
       restrict: 'E',      
       scope: {
-      	availability: "="
-      },
-      link: function postLink(scope, element, attrs) {
-        //element.text('this is the schedulerColumn directive');
-
+      	availability: "=",
+      	format: "@"
+      },      
+      link: function(scope, element, attrs) {        
+      	// click handler for selecting a time.
         scope._clickHandler = function(param) {
         	console.log("click handler with param:", param);
         	scope.$emit("selected-time", param);
         };
 
-        scope._formatTime = function(param) {
-        	//return moment(param).format("H:mm A");
-        	return momentjsService(param).format("h:mm A");
+        // format time.
+        scope._formatTime = function(param) {        	
+          scope.format = scope.format || "h:mm A"; //default format if not specified.
+
+        	return momentjsService(param).format(scope.format);
         };
       }
 

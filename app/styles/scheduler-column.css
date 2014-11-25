@@ -1,5 +1,10 @@
 /* styles for column and sub components of a column */
 
+div.scheduler-column ul {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
 div.scheduler-column li {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
@@ -9,6 +14,8 @@ div.scheduler-column li {
 	color: #FFFFFF;
 	height: 3em;
 	width: 100%;
+	box-sizing: border-box;
 	text-align: center;
+	line-height: 3em;	
 	box-shadow: 0.3em 0.3em 0.3em #888888;
 }  

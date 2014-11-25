@@ -1,0 +1,12 @@
+scheduler group place holder
+
+<div class="scheduler-group">
+	
+	<div class="column stretch" ng-repeat="dayData in _visibleSet">
+		<div>
+  			{{dayData.date}}
+  		</div>
+		  <scheduler-column availability="dayData.availableTimes">
+  		  </scheduler-column>
+	</div>
+</div>
