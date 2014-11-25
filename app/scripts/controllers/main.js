@@ -35,7 +35,7 @@ angular.module('angularSchedulerSpikeApp')
 
 
     $scope.$on("selected-time", function(event, data) {
-    	alert('selected id:' + data.id + ', selected time : ' + data.time);
+    	alert('selected time : ' + data);
     });
 
     var updateData = function() {
