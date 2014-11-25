@@ -8,17 +8,34 @@ Times in data
 
 <h2> Scheduler Column </h2>
 
-  <scheduler-column availability="testData.availableTimes" format="h:mm A">
+  <scheduler-column availability="testData.availableTimes" date="testData.date" format="h:mm A">
   </scheduler-column>
+
+Time Data:
+<button ng-click="_updateTimeData()">update data</button>
+<textarea id="dayData" style="width:100%;height: 8em;">
+	{
+    	'date' : new Date(2014, 11, 30),
+    	'availableTimes' : [
+    		new Date(2014, 11, 30, 12, 30, 0, 0),
+    		new Date(2014, 11, 30, 13, 0, 0, 0),
+    		new Date(2014, 11, 30, 15, 30, 0, 0)
+    	]
+    }
+</textarea>
+
 
 
 <hr/>
 
 <h2> Scheduler Group </h2>
 
-<scheduler-group data="testData2" range="7" offset="0"></scheduler-group>
+<scheduler-group data="testData2" range="numberOfDays" offset="offset"></scheduler-group>
+
 
 <button ng-click="_updateData()">update data</button>
+Number of Days: <input ng-model="numberOfDays"><br/>
+Offset: <input ng-model="offset"><br/>
 <textarea id="weekData" style="width:100%;height: 40em;">
 	[
     	{

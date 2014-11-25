@@ -10,12 +10,14 @@ div.scheduler-column div.date-col-header {
 	font-weight: 800;
 }
 
-div.scheduler-column li {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	list-style-type: none;
-	border-radius: 0.25em;
-	background-color: #0000FF;
+div.scheduler-column li {	
+	list-style-type: none;	
+	border: 1px solid;	
+	border-color: #2B669A;
+	
+	background-color: #418AC8;	
+	background-image: radial-gradient(#418AC8, #2D6CA2);
+	
 	color: #FFFFFF;
 	height: 3em;
 	width: 100%;
@@ -23,4 +25,13 @@ div.scheduler-column li {
 	text-align: center;
 	line-height: 3em;	
 	box-shadow: 0.3em 0.3em 0.3em #888888;
-}  
+}
+
+div.scheduler-column li:first-child {
+	border-top-right-radius : 0.5em;
+	border-top-left-radius : 0.5em;
+}
+div.scheduler-column li:last-child {
+	border-bottom-right-radius : 0.5em;
+	border-bottom-left-radius : 0.5em;
+}

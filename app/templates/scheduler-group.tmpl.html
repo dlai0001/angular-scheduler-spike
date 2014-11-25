@@ -3,7 +3,7 @@ scheduler group place holder
 <div class="scheduler-group">
 	
 	<div class="column stretch" ng-repeat="dayData in _visibleSet">
-		  <scheduler-column availability="dayData.availableTimes" date="dayData.date">
+		  <scheduler-column availability="dayData.availableTimes" date="dayData.date" range="numberOfDays">
   		  </scheduler-column>
 	</div>
 </div>

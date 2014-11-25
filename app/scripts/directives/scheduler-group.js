@@ -7,7 +7,7 @@
  * # schedulerGroup
  */
 angular.module('angularSchedulerSpikeApp')
-  .directive('schedulerGroup', function () {
+  .directive('schedulerGroup', ['$compile', function ($compile) {
     return {
       templateUrl: 'templates/scheduler-group.tmpl.html',
       restrict: 'E',
@@ -16,17 +16,19 @@ angular.module('angularSchedulerSpikeApp')
       	range: "=?",	//Amount of 
       	offset: "=?"	//index (by item position in data array), to paginate over by.
       },
-      controller: function($scope) {
-        // element.text('this is the schedulerGroup directive');
-
-        // We use 2 filtered sets to make the animation smooth when sliding in and out for pagination.
+      link: function postLink($scope, $element, $attrs) {
         $scope.$watch('data', function(newValue, oldValue) {
           var range = $scope.range || 7;
           var offset = $scope.offset || 0;
-          $scope._visibleSet = $scope.data.splice(offset, range);
-        });
+          $scope._visibleSet = $scope.data.splice(offset, range);          
+        }); //end watcher
+      },
+      controller: function($scope) {
         
-      }
+        
+    
+      } //end controller
       
-    };
-  });
+    }; //end return obj
+
+  }]); //end directive

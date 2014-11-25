@@ -2,6 +2,8 @@
 
 div.scheduler-group {
 	position: relative;
+	width: 100%;
+	z-index: 1;
 
 	display:-webkit-flex;
 	-webkit-justify-content:center;

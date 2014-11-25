@@ -15,19 +15,18 @@ angular.module('angularSchedulerSpikeApp')
       'Karma'
     ];
     
-    var time1 = new Date(2014, 11, 30, 13, 0, 0, 0);
-    var time2 = new Date(2014, 11, 30, 14, 0, 0, 0);
-    var time3 = new Date(2014, 11, 30, 15, 0, 0, 0);
-
-
-    $scope.testData = {
-    	date : new Date(2014, 11, 30),
-    	availableTimes : [
-    		time1,
-    		time2,
-    		time3
-    	]
+    $scope.testData = null;
+    var updateTimeData = function() {
+        console.log("updating data");
+        var dayValue = eval("[" + jQuery("#dayData").val() + "]")[0];
+        $scope.testData = dayValue;
     };
+    updateTimeData();
+
+    $scope._updateTimeData = function() {
+        updateTimeData.bind(this)();
+    }
+
 
 
     $scope.testData2 = [];
