@@ -1,6 +1,7 @@
 <div class="scheduler-column">
 	<div class="date-col-header">
-		{{_formatDate(date)}}
+		{{_formatDayOfWeek()}}<br/>
+		{{_formatDate()}}
 	</div>	
 	<ul>
 		<li ng-repeat="availableTime in availability"

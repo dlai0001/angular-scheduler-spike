@@ -18,10 +18,12 @@ div.scheduler-group div.column {
 	*display: inline;
 	box-sizing: border-box;
 	width: 6em;
-	border: 1px solid;
+	
 	vertical-align: top;
 	float: left;
+	border-left: none;
 }
+
 
 div.scheduler-group div.column.stretch {
 	width: 100%;

@@ -20,7 +20,8 @@ angular.module('angularSchedulerSpikeApp')
         date: "=", // date to display in header
       	availability: "=", //list of available times as date objects        
       	formatDate: "@",
-        formatTime: "@"
+        formatTime: "@",
+        formatDayOfWeek: "@"
       },      
       link: function(scope, element, attrs) {        
       	// click handler for selecting a time.
@@ -29,9 +30,14 @@ angular.module('angularSchedulerSpikeApp')
         	scope.$emit("selected-time", param);
         };
 
+        scope._formatDayOfWeek = function() {
+          scope.formatDayOfWeek = scope.formatDayOfWeek || "dddd"; //default format if not specified.
+          return momentjsService(scope.date).format(scope.formatDayOfWeek);
+        }
+
         // format date
         scope._formatDate = function() {
-          scope.formatDate = scope.formatDate || "M/D "; //default format if not specified.
+          scope.formatDate = scope.formatDate || "M/D/YYYY"; //default format if not specified.
           return momentjsService(scope.date).format(scope.formatDate);
         }
 
