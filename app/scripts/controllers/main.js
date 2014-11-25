@@ -27,16 +27,7 @@ angular.module('angularSchedulerSpikeApp')
         updateTimeData.bind(this)();
     }
 
-
-
     $scope.testData2 = [];
-
-
-
-    $scope.$on("selected-time", function(event, data) {
-    	alert('selected time : ' + data);
-    });
-
     var updateData = function() {
         console.log("updating data");
         var value = eval(jQuery("#weekData").val());        
@@ -46,5 +37,20 @@ angular.module('angularSchedulerSpikeApp')
     $scope._updateData = function() {
         updateData.bind(this)();
     };
+
+
+
+    $scope.$on("selected-time", function(event, data) {
+        var alertMsg = $("<div class=\"alert alert-info\">")
+            .text('selected time : ' + data)
+            .css("position", "fixed")
+            .css("top", "50%")
+            .css("z-index", 9999)            
+        $("body").append(alertMsg);
+        alertMsg.fadeOut(2000, function() {
+            alertMsg.remove();
+        });
+    });
+
 
   });
