@@ -28,7 +28,7 @@ div.scheduler-group div.column.stretch {
 	flex:1;
 }
 
-/*
+
 div.scheduler-group.animate {
 	transition: transform ease-out 800ms ;
     -moz-transition: transform 800ms ease-out;
@@ -41,7 +41,7 @@ div.scheduler-group.animate {
 }
 
 div.scheduler-group.hidden {
-	visibility: hidden;
+	display: none;
 }
 
 div.scheduler-group.hide-left {	
@@ -53,4 +53,3 @@ div.scheduler-group.hide-right {
 	transform: translate(5000px, 0);
 	-webkit-transform:translate(5000px, 0);
 }
-*/

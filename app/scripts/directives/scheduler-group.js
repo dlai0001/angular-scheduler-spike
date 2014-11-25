@@ -16,18 +16,17 @@ angular.module('angularSchedulerSpikeApp')
       	range: "=?",	//Amount of 
       	offset: "=?"	//index (by item position in data array), to paginate over by.
       },
-      link: function postLink(scope, element, attrs) {
+      controller: function($scope) {
         // element.text('this is the schedulerGroup directive');
 
         // We use 2 filtered sets to make the animation smooth when sliding in and out for pagination.
-        // scope._setA = [];
-        // scope._setB = [];
-        var range = scope.range || 7;
-        var offset = scope.offset || 0;
-        scope._visibleSet = scope.data.splice(offset, range);
-      },
-      directive: function($scope) {
-
+        $scope.$watch('data', function(newValue, oldValue) {
+          var range = $scope.range || 7;
+          var offset = $scope.offset || 0;
+          $scope._visibleSet = $scope.data.splice(offset, range);
+        });
+        
       }
+      
     };
   });

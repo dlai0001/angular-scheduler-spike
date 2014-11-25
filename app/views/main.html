@@ -4,6 +4,8 @@ Times in data
 </ul>
 
 
+
+
 <h2> Scheduler Column </h2>
 
   <scheduler-column availability="testData.availableTimes" format="h:mm A">
@@ -16,3 +18,72 @@ Times in data
 
 <scheduler-group data="testData2" range="7" offset="0"></scheduler-group>
 
+<button ng-click="_updateData()">update data</button>
+<textarea id="weekData" style="width:100%;height: 40em;">
+	[
+    	{
+    		date: new Date(2014, 10, 30),
+			availableTimes : [
+			    new Date(2014, 10, 30, 15, 0, 0, 0),
+			    new Date(2014, 10, 30, 16, 0, 0, 0),
+			    new Date(2014, 10, 30, 17, 0, 0, 0)
+			]
+    	},
+    	{
+    		date: new Date(2014, 11, 1),
+			availableTimes : [
+			    new Date(2014, 11, 1, 10, 0, 0, 0),
+			    new Date(2014, 11, 1, 12, 0, 0, 0),
+			    new Date(2014, 11, 1, 12, 30, 0, 0)
+			]
+    	},
+    	{
+    		date: new Date(2014, 11, 2),
+			availableTimes : [
+			    new Date(2014, 10, 30, 15, 0, 0, 0),
+			    new Date(2014, 10, 30, 15, 0, 0, 0),
+			    new Date(2014, 10, 30, 15, 0, 0, 0)
+			]
+    	},
+    	{
+    		date: new Date(2014, 11, 3),
+			availableTimes : [
+			    new Date(2014, 11, 3, 8, 30, 0),
+			    new Date(2014, 11, 3, 9, 30, 0),
+			    new Date(2014, 11, 3, 10, 30, 0)
+			]
+    	},
+    	{
+    		date: new Date(2014, 12, 4),
+			availableTimes : [
+			    new Date(2014, 12, 4, 10, 0 , 0),
+			    new Date(2014, 12, 4, 11, 0 , 0),
+			    new Date(2014, 12, 4, 13, 0 , 0)
+			]
+    	},
+    	{
+    		date: new Date(2014, 12, 5),
+			availableTimes : [
+			    new Date(2014, 12, 5, 14, 0 , 0, 0),
+			    new Date(2014, 12, 5, 14, 30, 0, 0),
+			    new Date(2014, 12, 5, 15, 45, 0, 0)
+			]
+    	},
+    	{
+    		date: new Date(2014, 12, 6),
+			availableTimes : [
+			    new Date(2014, 12, 6, 10, 0, 0, 0),
+			    new Date(2014, 12, 6, 11, 0, 0, 0),
+			    new Date(2014, 12, 6, 12, 0, 0, 0)
+			]
+    	},
+    	{
+    		date: new Date(2014, 12, 7),
+			availableTimes : [
+			    new Date(2014, 12, 7, 8, 0, 0, 0),
+			    new Date(2014, 12, 7, 9, 0, 0, 0),
+			    new Date(2014, 12, 7, 10, 0, 0, 0)
+			]
+    	}        
+    ]
+</textarea>

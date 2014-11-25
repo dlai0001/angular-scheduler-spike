@@ -17,8 +17,10 @@ angular.module('angularSchedulerSpikeApp')
       templateUrl: 'templates/scheduler-column.tmpl.html',
       restrict: 'E',      
       scope: {
-      	availability: "=",
-      	format: "@"
+        date: "=", // date to display in header
+      	availability: "=", //list of available times as date objects        
+      	formatDate: "@",
+        formatTime: "@"
       },      
       link: function(scope, element, attrs) {        
       	// click handler for selecting a time.
@@ -27,11 +29,16 @@ angular.module('angularSchedulerSpikeApp')
         	scope.$emit("selected-time", param);
         };
 
+        // format date
+        scope._formatDate = function() {
+          scope.formatDate = scope.formatDate || "M/D "; //default format if not specified.
+          return momentjsService(scope.date).format(scope.formatDate);
+        }
+
         // format time.
         scope._formatTime = function(param) {        	
-          scope.format = scope.format || "h:mm A"; //default format if not specified.
-
-        	return momentjsService(param).format(scope.format);
+          scope.formatTime = scope.formatTime || "h:mm A"; //default format if not specified.
+        	return momentjsService(param).format(scope.formatTime);
         };
       }
 

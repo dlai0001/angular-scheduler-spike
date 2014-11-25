@@ -5,6 +5,11 @@ div.scheduler-column ul {
 	padding-right: 0.5em;
 }
 
+div.scheduler-column div.date-col-header {
+	text-align: center;
+	font-weight: 800;
+}
+
 div.scheduler-column li {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
