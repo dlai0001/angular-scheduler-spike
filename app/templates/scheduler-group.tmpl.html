@@ -1,7 +1,8 @@
-<div class="scheduler-group">
-	
-	<div class="column stretch" ng-repeat="dayData in _visibleSet">
-		  <scheduler-column availability="dayData.availableTimes" date="dayData.date" range="numberOfDays" next="dayData.next">
-  		  </scheduler-column>
+<div class="scheduler-group-container">	
+	<div class="scheduler-group">
+		<div class="column stretch" ng-repeat="dayData in _visibleSet">
+			  <scheduler-column availability="dayData.availableTimes" date="dayData.date" next="dayData.next">
+	  		  </scheduler-column>
+		</div>
 	</div>
 </div>

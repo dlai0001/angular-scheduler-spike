@@ -49,8 +49,8 @@ angular.module('angularSchedulerSpikeApp')
           return (scope.next && true);
         }
 
-        scope._formatNextAvailable = function() {          
-          return momentjsService(scope.next).format("dddd M/D");
+        scope._formatNextAvailable = function() {         
+          return momentjsService(scope.next).format("ddd M/D");
         }
 
         // format time.

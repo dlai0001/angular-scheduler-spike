@@ -43,15 +43,16 @@ Time Data:
 
 <h2> Scheduler Group </h2>
 <blockquote>
-	&lt;scheduler-group data=&quot;testData2&quot; range=&quot;numberOfDays&quot; offset=&quot;offset&quot;&gt;&lt;/scheduler-group&gt;
+	&lt;scheduler-group data=&quot;testData2&quot; range=&quot;numberOfDays&quot; offset=&quot;offset&quot; direction=&quot;direction&quot;&gt;&lt;/scheduler-group&gt;
 </blockquote>
 
-<scheduler-group data="testData2" range="numberOfDays" offset="offset"></scheduler-group>
+<scheduler-group data="testData2" range="numberOfDays" offset="offset" direction="direction"></scheduler-group>
 
 
 <button ng-click="_updateData()">update data</button>
 Number of Days: <input ng-model="numberOfDays"><br/>
 Offset: <input ng-model="offset"><br/>
+Direction: <input ng-model="direction"> (enter 'left' or 'right' or blank or no transition)<br/>
 <textarea id="weekData" style="width:100%;height: 40em;">
 	[
     	{
@@ -64,18 +65,16 @@ Offset: <input ng-model="offset"><br/>
     	},
     	{
     		date: new Date(2014, 11, 1),
-			availableTimes : [
-			    new Date(2014, 11, 1, 10, 0, 0, 0),
-			    new Date(2014, 11, 1, 12, 0, 0, 0),
-			    new Date(2014, 11, 1, 12, 30, 0, 0)
-			]
+			availableTimes : []
     	},
     	{
     		date: new Date(2014, 11, 2),
 			availableTimes : [
 			    new Date(2014, 10, 30, 15, 0, 0, 0),
-			    new Date(2014, 10, 30, 15, 0, 0, 0),
-			    new Date(2014, 10, 30, 15, 0, 0, 0)
+			    new Date(2014, 10, 30, 15, 30, 0, 0),
+			    new Date(2014, 10, 30, 16, 0, 0, 0),
+			    new Date(2014, 10, 30, 16, 30, 0, 0),
+			    new Date(2014, 10, 30, 17, 0, 0, 0)
 			]
     	},
     	{
@@ -87,31 +86,30 @@ Offset: <input ng-model="offset"><br/>
 			]
     	},
     	{
-    		date: new Date(2014, 12, 4),
+    		date: new Date(2014, 11, 4),
 			availableTimes : [
-			    new Date(2014, 12, 4, 10, 0 , 0),
-			    new Date(2014, 12, 4, 11, 0 , 0),
-			    new Date(2014, 12, 4, 13, 0 , 0)
+			    new Date(2014, 11, 4, 10, 0 , 0),			    
+			    new Date(2014, 11, 4, 16, 0 , 0)
 			]
     	},
     	{
-    		date: new Date(2014, 12, 5),
+    		date: new Date(2014, 11, 5),
 			availableTimes : [
-			    new Date(2014, 12, 5, 14, 0 , 0, 0),
-			    new Date(2014, 12, 5, 14, 30, 0, 0),
-			    new Date(2014, 12, 5, 15, 45, 0, 0)
+			    new Date(2014, 11, 5, 14, 0 , 0, 0),
+			    new Date(2014, 11, 5, 14, 30, 0, 0),
+			    new Date(2014, 11, 5, 15, 45, 0, 0)
 			]
     	},
     	{
-    		date: new Date(2014, 12, 6),
-			next: Date(2014, 12, 7, 8, 0, 0, 0)
+    		date: new Date(2014, 11, 6),
+			next: new Date(2014, 11, 7, 8, 0, 0, 0)
     	},
     	{
-    		date: new Date(2014, 12, 7),
+    		date: new Date(2014, 11, 7),
 			availableTimes : [
-			    new Date(2014, 12, 7, 8, 0, 0, 0),
-			    new Date(2014, 12, 7, 9, 0, 0, 0),
-			    new Date(2014, 12, 7, 10, 0, 0, 0)
+			    new Date(2014, 11, 7, 8, 0, 0, 0),
+			    new Date(2014, 11, 7, 9, 0, 0, 0),
+			    new Date(2014, 11, 7, 10, 0, 0, 0)
 			]
     	}        
     ]

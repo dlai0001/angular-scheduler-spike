@@ -1,5 +1,10 @@
 /* Styles for group of columns */
 
+div.scheduler-group-container {
+	width: 100%;
+	overflow: hidden;
+}
+
 div.scheduler-group {
 	position: relative;
 	width: 100%;
@@ -33,27 +38,140 @@ div.scheduler-group div.column.stretch {
 }
 
 
-div.scheduler-group.animate {
-	transition: transform ease-out 800ms ;
-    -moz-transition: transform 800ms ease-out;
-    -o-transition: transform 800ms ease-out;
-    -webkit-transition: -webkit-transform 800ms ease 0s, opacity 0.2s ease 0s;
-    -webkit-animation-duration: 500ms;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-fill-mode: forwards;
+
+/*
+==============================================
+Transistions
+==============================================
+*/
+
+.exitRightEnterLeft{
+	animation-name: exitRightEnterLeft;
+	-webkit-animation-name: exitRightEnterLeft;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: linear;	
+	-webkit-animation-timing-function: linear;		
 }
 
-div.scheduler-group.hidden {
-	display: none;
+@keyframes exitRightEnterLeft {
+	0% {
+		transform: translateX(0%);
+		visibility: visible !important;
+	}
+	48% {
+		transform: translateX(100%);
+		visibility: visible !important;	
+	}
+	49% {
+		transform: translateX(100%);
+		visibility: hidden  !important;
+	}
+	50% {
+		transform: translateX(-100%);
+		visibility: hidden  !important;
+	}
+	51% {
+		transform: translateX(-100%);
+		visibility: visible !important;	
+	}
+	100% {
+		transform: translateX(0%);
+		visibility: visible !important;
+	}
 }
 
-div.scheduler-group.hide-left {	
-	transform: translate(-5000px, 0);
-	-webkit-transform:translate(-5000px, 0);
+@-webkit-keyframes exitRightEnterLeft {
+	0% {
+		-webkit-transform: translateX(0%);
+		visibility: visible !important;
+	}
+	48% {
+		-webkit-transform: translateX(100%);
+		visibility: visible !important;	
+	}
+	49% {
+		-webkit-transform: translateX(100%);
+		visibility: hidden  !important;
+	}
+	50% {
+		-webkit-transform: translateX(-100%);
+		visibility: hidden  !important;
+	}
+	51% {
+		-webkit-transform: translateX(-100%);
+		visibility: visible !important;	
+	}
+	100% {
+		-webkit-transform: translateX(0%);
+		visibility: visible !important;
+	}
 }
 
-div.scheduler-group.hide-right {
-	transform: translate(5000px, 0);
-	-webkit-transform:translate(5000px, 0);
+
+.exitLeftEnterRight{
+	animation-name: exitLeftEnterRight;
+	-webkit-animation-name: exitLeftEnterRight;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: linear;	
+	-webkit-animation-timing-function: linear;		
+}
+
+@keyframes exitLeftEnterRight {
+	0% {
+		transform: translateX(0%);
+		visibility: visible !important;
+	}
+	48% {
+		transform: translateX(-100%);
+		visibility: visible !important;	
+	}
+	49% {
+		transform: translateX(-100%);
+		visibility: hidden  !important;
+	}
+	50% {
+		transform: translateX(100%);
+		visibility: hidden  !important;
+	}
+	51% {
+		transform: translateX(100%);
+		visibility: visible !important;	
+	}
+	100% {
+		transform: translateX(0%);
+		visibility: visible !important;
+	}
+}
+
+@-webkit-keyframes exitLeftEnterRight {
+	0% {
+		-webkit-transform: translateX(0%);
+		visibility: visible !important;
+	}
+	48% {
+		-webkit-transform: translateX(-100%);
+		visibility: visible !important;	
+	}
+	49% {
+		-webkit-transform: translateX(-100%);
+		visibility: hidden  !important;
+	}
+	50% {
+		-webkit-transform: translateX(100%);
+		visibility: hidden  !important;
+	}
+	51% {
+		-webkit-transform: translateX(100%);
+		visibility: visible !important;	
+	}
+	100% {
+		-webkit-transform: translateX(0%);
+		visibility: visible !important;
+	}
 }

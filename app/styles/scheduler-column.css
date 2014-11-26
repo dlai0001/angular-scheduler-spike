@@ -65,5 +65,6 @@ div.scheduler-column li.next-available {
 div.scheduler-column li span.next-available-date {
 	text-decoration: underline;
 	color: #173B82;
-	font-weight: 600;	
+	font-weight: 600;
+	white-space:nowrap;
 }
