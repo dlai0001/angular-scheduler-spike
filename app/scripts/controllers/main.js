@@ -19,6 +19,7 @@ angular.module('angularSchedulerSpikeApp')
     var updateTimeData = function() {
         console.log("updating data");
         var dayValue = eval("[" + jQuery("#dayData").val() + "]")[0];
+        $scope.testDataNext = eval("[" + jQuery("#nextDateInput").val() + "]")[0];
         $scope.testData = dayValue;
     };
     updateTimeData();

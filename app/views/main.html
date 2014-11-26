@@ -17,12 +17,14 @@ Times in data
   </scheduler-column>
 
 <blockquote>
-	&lt;scheduler-column next=&quot;testDataNext&quot; date=&quot;testData.date&quot; date_format=&quot;h:mm A&quot;&gt;
+    &lt;scheduler-column next=&quot;testDataNext&quot; date=&quot;testData.date&quot; date_format=&quot;h:mm A&quot;&gt;
   &lt;/scheduler-column&gt;
 </blockquote>
 
   <scheduler-column date="testData.date" next="testDataNext">
   </scheduler-column>
+
+
 
 Time Data:
 <button ng-click="_updateTimeData()">update data</button>
@@ -35,7 +37,8 @@ Time Data:
     		new Date(2014, 11, 30, 15, 30, 0, 0)
     	]
     }
-</textarea>
+</textarea><br/>
+Next Date: <input id="nextDateInput" value="new Date(2014, 11, 26, 12, 30, 0, 0)">
 
 
 
