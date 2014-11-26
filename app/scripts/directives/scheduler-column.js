@@ -20,9 +20,9 @@ angular.module('angularSchedulerSpikeApp')
         date: "=", // date to display in header
       	availability: "=availability", //list of available times as date objects
         next: "=next",
-      	formatDate: "@formatDate",
-        formatTime: "@formatTime",
-        formatDayOfWeek: "@formatDayOfWeek"
+      	dateformat: "@dateformat",
+        timeformat: "@timeformat",
+        dayofweek: "@dayofweek"
       },      
       link: function(scope, element, attrs) {        
       	// click handler for selecting a time.
@@ -35,14 +35,14 @@ angular.module('angularSchedulerSpikeApp')
         }.bind(this);
 
         scope._formatDayOfWeek = function() {
-          scope.formatDayOfWeek = attrs.formatDayOfWeek || "dddd"; //default format if not specified.
-          return momentjsService(scope.date).format(scope.formatDayOfWeek);
+          scope.dayofweek = attrs.dayofweek || "dddd"; //default format if not specified.
+          return momentjsService(scope.date).format(scope.dayofweek);
         }
 
         // format date
         scope._formatDate = function() {
-          scope.formatDate = attrs.formatDate || "M/D/YYYY"; //default format if not specified.
-          return momentjsService(scope.nextAvailable).format(scope.formatDate);
+          scope.dateformat = attrs.dateformat || "M/D/YYYY"; //default format if not specified.
+          return momentjsService(scope.nextAvailable).format(scope.dateformat);
         }
 
         scope._isNextAvailable = function() {
@@ -55,8 +55,8 @@ angular.module('angularSchedulerSpikeApp')
 
         // format time.
         scope._formatTime = function(param) {        	
-          scope.formatTime = attrs.formatTime || "h:mm A"; //default format if not specified.
-        	return momentjsService(param).format(scope.formatTime);
+          scope.timeformat = attrs.timeformat || "h:mm A"; //default format if not specified.
+        	return momentjsService(param).format(scope.timeformat);
         };
 
       }

@@ -9,15 +9,15 @@ Times in data
 <h2> Scheduler Column </h2>
 
 <blockquote>
-	&lt;scheduler-column availability=&quot;testData.availableTimes&quot; date=&quot;testData.date&quot; format=&quot;h:mm A&quot;&gt;
+ &lt;scheduler-column availability=&quot;testData.availableTimes&quot; date=&quot;testData.date&quot; timeformat=&quot;h:mm.ss A&quot; dateformat=&quot;MMM D, YY&quot; dayofweek=&quot;ddd&quot;&gt;
   &lt;/scheduler-column&gt;
 </blockquote>
 
-  <scheduler-column availability="testData.availableTimes" date="testData.date" format="h:mm A">
+  <scheduler-column availability="testData.availableTimes" date="testData.date" timeformat="h:mm.ss A" dateformat="MMM D, YY" dayofweek="ddd">
   </scheduler-column>
 
 <blockquote>
-	&lt;scheduler-column next=&quot;testDataNext&quot; date=&quot;testData.date&quot; format=&quot;h:mm A&quot;&gt;
+	&lt;scheduler-column next=&quot;testDataNext&quot; date=&quot;testData.date&quot; date_format=&quot;h:mm A&quot;&gt;
   &lt;/scheduler-column&gt;
 </blockquote>
 
@@ -104,11 +104,7 @@ Offset: <input ng-model="offset"><br/>
     	},
     	{
     		date: new Date(2014, 12, 6),
-			availableTimes : [
-			    new Date(2014, 12, 6, 10, 0, 0, 0),
-			    new Date(2014, 12, 6, 11, 0, 0, 0),
-			    new Date(2014, 12, 6, 12, 0, 0, 0)
-			]
+			next: Date(2014, 12, 7, 8, 0, 0, 0)
     	},
     	{
     		date: new Date(2014, 12, 7),
