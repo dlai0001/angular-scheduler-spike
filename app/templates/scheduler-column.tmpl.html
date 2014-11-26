@@ -4,9 +4,13 @@
 		{{_formatDate()}}
 	</div>	
 	<ul>
-		<li ng-repeat="availableTime in availability"
+		<li class="selectable-time-slot" ng-repeat="availableTime in availability"
 			ng-click="_clickHandler(availableTime)">
 		{{_formatTime(availableTime)}}
-
+		</li>
+		<li ng-if="_isNextAvailable()" class="next-available">
+			No availibility this day.<br/>
+			Next: <span ng-click="_nextAvailableClickHandler()" class="next-available-date">{{_formatNextAvailable()}}<i class="glyphicon glyphicon-play"></i></span>
+		</li>	
 	</ul>
 </div>

@@ -28,7 +28,13 @@ div.scheduler-column div.date-col-header:first-child {
 }
 
 div.scheduler-column li {	
-	list-style-type: none;	
+	list-style-type: none;		
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;			
+}
+
+div.scheduler-column li.selectable-time-slot {
 	border: 1px solid;	
 	border-color: #2B669A;
 	
@@ -37,18 +43,27 @@ div.scheduler-column li {
 	
 	color: #FFFFFF;
 	height: 3em;
-	width: 100%;
-	box-sizing: border-box;
-	text-align: center;
-	line-height: 3em;	
+	line-height: 3em;
 	box-shadow: 0.3em 0.3em 0.3em #888888;
 }
 
-div.scheduler-column li:first-child {
+div.scheduler-column li:first-child.selectable-time-slot {
 	border-top-right-radius : 0.5em;
 	border-top-left-radius : 0.5em;
 }
-div.scheduler-column li:last-child {
+div.scheduler-column li:last-child.selectable-time-slot {
 	border-bottom-right-radius : 0.5em;
 	border-bottom-left-radius : 0.5em;
+}
+
+div.scheduler-column li.next-available {
+	border: 1px solid;
+	border-radius: 0.25em;
+	border-color: #797979;
+}
+
+div.scheduler-column li span.next-available-date {
+	text-decoration: underline;
+	color: #173B82;
+	font-weight: 600;	
 }

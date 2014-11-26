@@ -16,6 +16,14 @@ Times in data
   <scheduler-column availability="testData.availableTimes" date="testData.date" format="h:mm A">
   </scheduler-column>
 
+<blockquote>
+	&lt;scheduler-column next=&quot;testDataNext&quot; date=&quot;testData.date&quot; format=&quot;h:mm A&quot;&gt;
+  &lt;/scheduler-column&gt;
+</blockquote>
+
+  <scheduler-column date="testData.date" next="testDataNext">
+  </scheduler-column>
+
 Time Data:
 <button ng-click="_updateTimeData()">update data</button>
 <textarea id="dayData" style="width:100%;height: 8em;">

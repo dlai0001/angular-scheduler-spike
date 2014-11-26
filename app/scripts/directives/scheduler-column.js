@@ -18,34 +18,47 @@ angular.module('angularSchedulerSpikeApp')
       restrict: 'E',      
       scope: {
         date: "=", // date to display in header
-      	availability: "=", //list of available times as date objects        
-      	formatDate: "@",
-        formatTime: "@",
-        formatDayOfWeek: "@"
+      	availability: "=availability", //list of available times as date objects
+        next: "=next",
+      	formatDate: "@formatDate",
+        formatTime: "@formatTime",
+        formatDayOfWeek: "@formatDayOfWeek"
       },      
       link: function(scope, element, attrs) {        
       	// click handler for selecting a time.
-        scope._clickHandler = function(param) {
-        	console.log("click handler with param:", param);
+        scope._clickHandler = function(param) {        	
         	scope.$emit("selected-time", param);
-        };
+        };        
+
+        scope._nextAvailableClickHandler = function() {
+          scope.$emit("selected-next-available", scope.next);
+        }.bind(this);
 
         scope._formatDayOfWeek = function() {
-          scope.formatDayOfWeek = scope.formatDayOfWeek || "dddd"; //default format if not specified.
+          scope.formatDayOfWeek = attrs.formatDayOfWeek || "dddd"; //default format if not specified.
           return momentjsService(scope.date).format(scope.formatDayOfWeek);
         }
 
         // format date
         scope._formatDate = function() {
-          scope.formatDate = scope.formatDate || "M/D/YYYY"; //default format if not specified.
-          return momentjsService(scope.date).format(scope.formatDate);
+          scope.formatDate = attrs.formatDate || "M/D/YYYY"; //default format if not specified.
+          return momentjsService(scope.nextAvailable).format(scope.formatDate);
+        }
+
+        scope._isNextAvailable = function() {
+          return (scope.next && true);
+        }
+
+        scope._formatNextAvailable = function() {          
+          return momentjsService(scope.next).format("dddd M/D");
         }
 
         // format time.
         scope._formatTime = function(param) {        	
-          scope.formatTime = scope.formatTime || "h:mm A"; //default format if not specified.
+          scope.formatTime = attrs.formatTime || "h:mm A"; //default format if not specified.
         	return momentjsService(param).format(scope.formatTime);
         };
+
       }
 
           
