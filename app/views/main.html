@@ -49,7 +49,7 @@ Next Date: <input id="nextDateInput" value="new Date(2014, 11, 26, 12, 30, 0, 0)
 	&lt;scheduler-group data=&quot;testData2&quot; range=&quot;numberOfDays&quot; offset=&quot;offset&quot; direction=&quot;direction&quot;&gt;&lt;/scheduler-group&gt;
 </blockquote>
 
-<scheduler-group data="testData2" range="numberOfDays" offset="offset" direction="direction"></scheduler-group>
+<scheduler-group data="testData2" range="{{numberOfDays}}" offset="{{offset}}" direction="{{direction}}"></scheduler-group>
 
 
 <button ng-click="_updateData()">update data</button>

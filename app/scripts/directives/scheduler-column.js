@@ -17,49 +17,53 @@ angular.module('angularSchedulerSpikeApp')
       templateUrl: 'templates/scheduler-column.tmpl.html',
       restrict: 'E',      
       scope: {
-        date: "=", // date to display in header
+        date: "=date", // date to display in header
       	availability: "=availability", //list of available times as date objects
-        next: "=next",
-      	dateformat: "@dateformat",
-        timeformat: "@timeformat",
-        dayofweek: "@dayofweek"
+        next: "=next"      	
       },      
-      link: function(scope, element, attrs) {        
-      	// click handler for selecting a time.
-        scope._clickHandler = function(param) {        	
-        	scope.$emit("selected-time", param);
-        };        
 
-        scope._nextAvailableClickHandler = function() {
-          scope.$emit("selected-next-available", scope.next);
-        }.bind(this);
-
-        scope._formatDayOfWeek = function() {
-          scope.dayofweek = attrs.dayofweek || "dddd"; //default format if not specified.
-          return momentjsService(scope.date).format(scope.dayofweek);
+      controller: function($scope) {
+        /////// Apply formatters for date/time //////////////
+        $scope._formatDayOfWeek = function() {          
+          return momentjsService($scope.date).format($scope._dayofweek);
         }
 
-        // format date
-        scope._formatDate = function() {
-          scope.dateformat = attrs.dateformat || "M/D/YYYY"; //default format if not specified.
-          return momentjsService(scope.nextAvailable).format(scope.dateformat);
+        $scope._formatDate = function() {          
+          return momentjsService($scope.nextAvailable).format($scope._dateformat);
         }
 
-        scope._isNextAvailable = function() {
-          return (scope.next && true);
-        }
-
-        scope._formatNextAvailable = function() {         
-          return momentjsService(scope.next).format("ddd M/D");
-        }
-
-        // format time.
-        scope._formatTime = function(param) {        	
-          scope.timeformat = attrs.timeformat || "h:mm A"; //default format if not specified.
-        	return momentjsService(param).format(scope.timeformat);
+        $scope._formatTime = function(param) {                   
+          return momentjsService(param).format($scope._timeformat);
         };
 
+        /////////////// Handle Displaying the next available date if set /////////////////
+        $scope._isNextAvailable = function() {
+          return ($scope.next && true);
+        }
+
+        $scope._formatNextAvailable = function() {         
+          return momentjsService($scope.next).format("ddd M/D");
+        }
+
+
+        ////// Click Handlers ///////
+        $scope._clickHandler = function(param) {          
+          $scope.$emit("selected-time", param);
+        };
+
+        $scope._nextAvailableClickHandler = function() {
+          $scope.$emit("selected-next-available", $scope.next);
+        }.bind(this);
+      },
+
+      link: function(scope, element, attrs) {      
+
+        ///// Provide default formatting if not specified. /////
+        scope._dayofweek = attrs.dayofweek || "dddd"; //default format if not specified.
+        scope._dateformat = attrs.dateformat || "M/D/YYYY"; //default format if not specified.
+        scope._timeformat = attrs.timeformat || "h:mm A"; //default format if not specified.
       }
+
 
           
     };
